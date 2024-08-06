@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belanja</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="hero">
+          <h2>Hoode</h2>
+          <p>Terkenal dari Nike</p>
+        </div>
+        <div class="fitur fitur1">
+          <h4 class="price">IDR 200K</h4>
+          <p class="item">Baju Adidas</p>
+        </div>
+        <div class="fitur fitur2">
+          <h4 class="price">IDR 300K</h4>
+          <p class="item">Celana Adidas</p>
+        </div>
+      </div>
+
+      <div class="nav">
+        <div class="menu">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logo">
+          <h2>Belanja</h2>
+        </div>
+        <ul>
+          <li><a href="">Link1</a></li>
+          <li><a href="">Link2</a></li>
+          <li><a href="">Link3</a></li>
+          <li><a href="">Link4</a></li>
+        </ul>
+      </div>
+
+      <section class="services">
+        <div class="service">
+          <div class="icon">💻</div>
+          <h3>Tutorial</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            tenetur.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon">🎓</div>
+          <h3>Online course</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            tenetur.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon">🎙️</div>
+          <h3>Podcast</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            tenetur.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon">👕</div>
+          <h3>Merchendaist</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+            tenetur.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>Gallery</h2>
+        <img src="img/apel_bg.jpg" />
+        <img src="img/teratai_bg.jpg" />
+        <img src="img/stroberi_bg.jpg" />
+        <img src="img/harimau_jpg.png" />
+        <img src="img/rusa_bg.png" />
+        <img src="img/kuda_bg.png" />
+      </section>
+    </div>
+
+    <script>
+      const menu = document.querySelector(".menu input");
+      const nav = document.querySelector(".nav ul");
+
+      menu.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
+  </body>
+</html>

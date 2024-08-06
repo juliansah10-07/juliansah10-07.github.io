@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ddd;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero hero fitur1"
+    "hero hero fitur2";
+}
+
+.hero {
+  grid-area: hero;
+  background-image: url(img/ft.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  padding: 50px;
+}
+
+.hero > * {
+  display: none;
+}
+
+.fitur {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fitur1 {
+  grid-area: fitur1;
+  background-image: url(img/baju1.jpg);
+  background-size: cover;
+}
+
+.fitur2 {
+  grid-area: fitur2;
+  background-image: url(img/3.jpg);
+  background-size: cover;
+}
+
+.fitur .price {
+  font-size: 2em;
+  font-weight: 200;
+}
+
+/* Nav */
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  order: -1;
+}
+
+.nav .logo {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.nav a {
+  display: block;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+/* Menu */
+
+.menu {
+  display: none;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.menu span {
+  background-color: black;
+  width: 28px;
+  height: 3px;
+  display: block;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu input {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: 0;
+  left: -6px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, 1px);
+  background-color: white;
+}
+
+.menu input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.menu input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-2px, 0px);
+  background-color: white;
+}
+
+/* Services */
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 3em;
+}
+
+.service h3 {
+  font-size: 1.5em;
+}
+
+.service p {
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+/* Gallery */
+
+.gallery {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+}
+
+.gallery h2 {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Responsiv */
+
+@media (max-width: 1024px) {
+  .nav {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+
+  .nav .logo {
+    display: none;
+  }
+
+  .hero > * {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    order: -1;
+    justify-items: end;
+  }
+
+  .container .nav ul {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all 1s;
+    opacity: 0;
+  }
+
+  .container .nav ul.slide {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 15px;
+  }
+
+  .header {
+    grid-template-areas:
+      "hero"
+      "fitur1"
+      "fitur2";
+  }
+}
